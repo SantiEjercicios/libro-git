@@ -1,0 +1,44 @@
+DROP PROCEDURE IF EXISTS ORDENAR;
+
+DELIMITER $$
+CREATE PROCEDURE ORDENAR( INOUT  a1 INT, INOUT  a2 INT, INOUT  a3 INT, INOUT  a4 INT)
+BEGIN
+
+    DECLARE swapped INT;
+    DECLARE temp INT;
+
+    REPEAT
+        SET swapped = 0;
+        -- Compara y ordena los elementos adyacentes
+        IF a1 < a2 THEN
+            SET temp = a1;
+            SET a1 = a2;
+            SET a2 = temp;
+            SET swapped = 1;
+        END IF;
+
+        IF a2 < a3 THEN
+            SET temp = a2;
+            SET a2 = a3;
+            SET a3 = temp;
+            SET swapped = 1;
+        END IF;
+
+        IF a3 < a4 THEN
+            SET temp = a3;
+            SET a3 = a4;
+            SET a4 = temp;
+            SET swapped = 1;
+        END IF;
+    UNTIL swapped = 0 END REPEAT;
+
+END $$
+DELIMITER ;
+SET @a1 = 10586740;
+SET @a2 = 7845; 
+SET @a3 = 25648120;
+SET @a4 = 16565;
+
+CALL ORDENAR(@a1, @a2, @a3, @a4);
+
+SELECT @a1, @a2, @a3, @a4;
