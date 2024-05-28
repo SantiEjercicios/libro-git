@@ -1,0 +1,20 @@
+    int start = jTPantalla.getSelectionStart();
+        int end = jTPantalla.getSelectionEnd();
+
+if (start != end) {
+    StyledDocument doc = jTPantalla.getStyledDocument();
+    Element element = doc.getCharacterElement(start);
+    AttributeSet as = element.getAttributes();
+
+    boolean isUnderline = StyleConstants.isUnderline(as); // Verifica si ya está subrayado
+    SimpleAttributeSet sas = new SimpleAttributeSet();
+    StyleConstants.setUnderline(sas, !isUnderline); // Cambia a subrayado o quita el subrayado
+    doc.setCharacterAttributes(start, end - start, sas, false);
+} else {
+    StyledDocument doc = jTPantalla.getStyledDocument();
+    SimpleAttributeSet sas = new SimpleAttributeSet();
+    AttributeSet inputAttributes = jTPantalla.getInputAttributes();
+
+    boolean isUnderline = StyleConstants.isUnderline(inputAttributes); // Verifica si ya está subrayado
+    StyleConstants.setUnderline(sas, !isUnderline); // Cambia a subrayado o quita el subrayado
+    jTPantalla.setCharacterAttributes(sas, false);
