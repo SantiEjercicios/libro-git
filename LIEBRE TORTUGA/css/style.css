@@ -1,0 +1,74 @@
+body{
+
+
+    background-image: url(../img/fondo_bosque.png);
+    background-repeat: no-repeat;
+
+    background-size: cover;
+}
+
+
+
+
+.tortuga{
+
+position: absolute;
+top: 420px;
+left: 100px;
+animation-name: mover;
+animation-duration: 5s;
+animation-timing-function: linear;
+animation-iteration-count: 1;
+animation-direction: alternate;
+animation-fill-mode: both;
+animation-play-state: paused;
+
+
+
+
+}
+
+
+.liebre{
+
+    position: absolute;
+    top: 120px;
+    left: 100px;
+
+    animation-name: mover;
+    animation-duration: 15  s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    
+    }
+
+
+
+
+    .tortuga:hover {
+
+        animation-play-state: running;
+
+
+    }
+
+
+
+    @keyframes mover {
+
+
+0%{
+
+    left: 100px;
+}
+100%{
+
+
+    left: 1300px;
+}
+
+        
+    }
