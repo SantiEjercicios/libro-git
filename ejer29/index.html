@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Document</title>
+    <style>
+body{
+     width: 900px;
+     display: inline-grid;
+     grid-template-columns: 1fr 2fr 1fr;
+     grid-auto-rows: 100px;
+}
+div{
+    border: 1px solid black;
+}
+ @media screen and (max-width:800px) {
+    body{
+        width: 100%;
+        display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 100px;
+    }
+    div:nth-child(4){
+        grid-column: 1;
+        grid-row: 1;
+    }
+ }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>ESTE ES EL CONTENIDO MAS IMPORTANTE</div>
+    <div>5</div>
+    <div>6</div>
+</body>
+</html>
