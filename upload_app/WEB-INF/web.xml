@@ -1,0 +1,19 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+                 version="3.0">
+    <servlet>
+        <servlet-name>uploadServlet</servlet-name>
+        <jsp-file>/upload.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>uploadServlet</servlet-name>
+        <url-pattern>/upload.jsp</url-pattern>
+    </servlet-mapping>
+    <multipart-config>
+        <max-file-size>10485760</max-file-size>
+        <max-request-size>20971520</max-request-size>
+        <file-size-threshold>512000</file-size-threshold>
+    </multipart-config>
+</web-app>
