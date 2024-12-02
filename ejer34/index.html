@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Santiago Redondo Moreno</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script>
+      window.onload = function () {
+        document.querySelectorAll("input[type=button]")[0].onclick =
+          function () {
+            codificar(0);
+          };
+        document.querySelectorAll("input[type=button]")[1].onclick =
+          function () {
+            codificar(1);
+          };
+      };
+      function codificar(accion) {
+        let textoFinal = "";
+        let textoAcodificar = texto.value;
+        let clave = parseInt(Math.random() * 1000);
+        for (let i = 0; i <= textoAcodificar.length; i++) {
+          caracter = textoAcodificar.charCodeAt(i);
+          nuevoCaracter = String.fromCharCode(clave + caracter);
+          textoFinal += nuevoCaracter;
+        }
+        claveOculta = String.fromCharCode(clave);
+        textoAcodificar + claveOculta;
+        codificado.value = textoFinal;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <textarea
+          name="texto"
+          placeholder="Ingresa un texto"
+          cols="30"
+          rows="15"
+          id="texto"
+        ></textarea
+        ><textarea
+          placeholder="Ingresa un texto"
+          name="codificado"
+          cols="30"
+          rows="15"
+          id="codificado"
+        ></textarea>
+        <br />
+        <input type="button" value="Codificar" />
+        <input type="button" value="Decodificar" />
+      </form>
+    </div>
+    <script src="js/javascript.js" type="text/javascript"></script>
+  </body>
+</html>
